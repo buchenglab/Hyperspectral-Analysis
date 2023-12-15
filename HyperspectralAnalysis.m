@@ -6,7 +6,7 @@
 %
 % The following code is distributed without any warranty, and without
 % implied warranty of merchantability or fitness for a particular purpose.
-% Distribution of this work for commercial purposes is prohibitted. This
+% Distribution of this work for commercial purposes is prohibited. This
 % work can be redistributed and/or modified for non-commercial purposes.
 % Publications that use this code or modified instances should credit the
 % author(s) appropriately.
