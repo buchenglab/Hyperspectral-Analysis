@@ -900,7 +900,7 @@ function HyperspectralUI(ScreenSize)
             uialert(LoadFig,'Something must be exported. Not all necessary data exists!','Empty Export','Icon','Warning');
             return;
         end
-        ExportProgress = uiprogressdlg(ReshapeFig,'Title','Exporting Data','Message','Beginning data export');
+        ExportProgress = uiprogressdlg(LoadFig,'Title','Exporting Data','Message','Beginning data export');
         for b = 1:size(ProcessedArray,1)
             ExportProgress.Message = sprintf('Exporting data set %d/%d',b,size(ProcessedArray,1));
             ExportProgress.Value = b/size(ProcessedArray,1);
