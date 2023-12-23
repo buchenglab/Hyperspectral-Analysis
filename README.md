@@ -18,18 +18,18 @@ Hyperspectral Analysis is a MATLAB-based analysis program designed to process hy
  - Cleaner composite image generation
  - Requested adjustments to the binary mask UI to improve ease of use and flexibility
  - Exported processing overview .txt with all steps taken and parameters associated
+ - BM4D image denoising and an associated UI
  - Additional tooltips to cover features
  - Quality of life features and improvements to stability & performance
 
 ### Future Features
- While not pending for the next update, these are eventual features that will soon be implemented and available for public use
- - BM4D image denoising and an associated UI
+ While potentially not pending for the next update, these are eventual features that will soon be implemented and available for public use
  - More export options:
 	 - Other z-projections (min/max intensity, sum of slices, median, etc.)
 	 - Key frames selection UI and export
 	 - Scale bars on images
  - Menu bar allowing users to customize and remove features
- - Stitching loaded hyperspectral stacks into composite images
+ - Stitching loaded hyperspectral stacks into composite image stacks
  - Automatic lambda calculation for lasso
  - Connections to other denoising packages (including Python-based ones)
  - User manual on GitHub with full visual explanations of all features
