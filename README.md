@@ -1,5 +1,5 @@
 # Hyperspectral-Analysis
-**Version 0.95** *Updated February 2024*
+**Version 0.95** *Updated February 2024*\
 *Developed by Mark Cherepashensky from the [Ji-Xin Cheng Group of Boston University](https://sites.bu.edu/cheng-group/)*
 ![Central Interface for Hyperspectral Analysis](https://i.imgur.com/XTPyQdh.png)
 Hyperspectral Analysis is a MATLAB-based analysis program designed to process hyperspectral image stacks. Using an intuitive UI with a robust and expanding feature set, the pipeline from raw to processed images is now easier to use and faster simultaneously. This open and easily modifiable script can be run with any type of hyperspectral data, though it was primarily developed with SRS and MIP acquired image stacks.
