@@ -640,7 +640,7 @@ function HyperspectralUI(ScreenSize)
         
         function SizeDisplay()
             if strcmp(SizeType.Value,'Default') && strcmp(SigmaType.Value,'Scalar')
-                FirstSizeField.Value = string(2*ceil(2*str2double(FirstSigmaField.Value))+1);
+                FirstSizeField.Value = 2*ceil(2*FirstSigmaField.Value)+1;
                 SecondSizeField.Value = FirstSizeField.Value;
                 ThirdSizeField.Value = FirstSizeField.Value;
                 FirstSizeLabel.Text = 'N:';
@@ -649,9 +649,9 @@ function HyperspectralUI(ScreenSize)
                 ThirdSizeLabel.Visible = 'off';
                 ThirdSizeField.Visible = 'off';
             elseif strcmp(SizeType.Value,'Default') && strcmp(SigmaType.Value,'Vector')
-                FirstSizeField.Value = string(2*ceil(2*str2double(FirstSigmaField.Value))+1);
-                SecondSizeField.Value = string(2*ceil(2*str2double(SecondSigmaField.Value))+1);
-                ThirdSizeField.Value = string(2*ceil(2*str2double(ThirdSigmaField.Value))+1);
+                FirstSizeField.Value = 2*ceil(2*FirstSigmaField.Value)+1;
+                SecondSizeField.Value = 2*ceil(2*SecondSigmaField.Value)+1;
+                ThirdSizeField.Value = 2*ceil(2*ThirdSigmaField.Value)+1;
                 FirstSizeLabel.Text = 'X:';
                 SecondSizeLabel.Visible = 'on';
                 SecondSizeField.Visible = 'on';
@@ -680,8 +680,8 @@ function HyperspectralUI(ScreenSize)
                     ThirdSizeField.Visible = 'on';
                 end
             end
-            Sigma = [str2double(FirstSigmaField.Value) str2double(SecondSigmaField.Value) str2double(ThirdSigmaField.Value)];
-            Kernel = [str2double(FirstSizeField.Value) str2double(SecondSizeField.Value) str2double(ThirdSizeField.Value)];
+            Sigma = [FirstSigmaField.Value SecondSigmaField.Value ThirdSigmaField.Value];
+            Kernel = [FirstSizeField.Value SecondSizeField.Value ThirdSizeField.Value];
             PreviewGaussian();
         end
 
@@ -689,8 +689,8 @@ function HyperspectralUI(ScreenSize)
         % Ensures correct values for the various uieditfields
             switch Source
                 case {FirstSigmaField,SecondSigmaField,ThirdSigmaField}
-                    if str2double(Event.Value) < 0
-                        uialert(LoadFig,sprintf('%s is not a valid entry. Sigma values must be positive numbers. Reverting to previous entry.',Event.Value),'Invalid Sigma','Icon','Error');
+                    if Event.Value < 0
+                        uialert(LoadFig,sprintf('%f is not a valid entry. Sigma values must be positive numbers. Reverting to previous entry.',Event.Value),'Invalid Sigma','Icon','Error');
                         Source.Value = Event.PreviousValue;
                         return;
                     end
@@ -698,16 +698,16 @@ function HyperspectralUI(ScreenSize)
                         SecondSigmaField.Value = FirstSigmaField.Value;
                         ThirdSigmaField.Value = FirstSigmaField.Value;
                     end
-                    Sigma = [str2double(FirstSigmaField.Value) str2double(SecondSigmaField.Value) str2double(ThirdSigmaField.Value)];
+                    Sigma = [FirstSigmaField.Value SecondSigmaField.Value ThirdSigmaField.Value];
                     if strcmp(SizeType.Value,'Default')
-                        FirstSizeField.Value = string(2*ceil(2*str2double(FirstSigmaField.Value))+1);
-                        SecondSizeField.Value = string(2*ceil(2*str2double(SecondSigmaField.Value))+1);
-                        ThirdSizeField.Value = string(2*ceil(2*str2double(ThirdSigmaField.Value))+1);
+                        FirstSizeField.Value = 2*ceil(2*FirstSigmaField.Value)+1;
+                        SecondSizeField.Value = 2*ceil(2*SecondSigmaField.Value)+1;
+                        ThirdSizeField.Value = 2*ceil(2*ThirdSigmaField.Value)+1;
                     end
                     PreviewGaussian();
                 case {FirstSizeField,SecondSizeField,ThirdSizeField}
-                    if str2double(Event.Value) < 0 || mod(str2double(Event.Value),1) ~= 0 || mod(str2double(Event.Value),2) ~= 1
-                        uialert(LoadFig,sprintf('%s is not a valid entry. Size values must be positive odd integers. Reverting to previous entry.',Event.Value),'Invalid Size','Icon','Error');
+                    if Event.Value < 0 || mod(Event.Value,1) ~= 0 || mod(Event.Value,2) ~= 1
+                        uialert(LoadFig,sprintf('%f is not a valid entry. Size values must be positive odd integers. Reverting to previous entry.',Event.Value),'Invalid Size','Icon','Error');
                         Source.Value = Event.PreviousValue;
                         return;
                     end
@@ -719,7 +719,7 @@ function HyperspectralUI(ScreenSize)
                     elseif strcmp(SizeType.Value,'Default') && strcmp(SigmaType.Value,'Vector')
                         SizeType.Value = 'Vector';
                     end
-                    Kernel = [str2double(FirstSizeField.Value) str2double(SecondSizeField.Value) str2double(ThirdSizeField.Value)];
+                    Kernel = [FirstSizeField.Value SecondSizeField.Value ThirdSizeField.Value];
                     PreviewGaussian();
             end
         end
