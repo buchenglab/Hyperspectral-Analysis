@@ -519,17 +519,17 @@ function HyperspectralUI(ScreenSize)
             SigmaType = uidropdown(SubtractOperationsPanel,'Position',ResolutionScaler([500 75 100 20]),'Items',{'Scalar','Vector'},'FontSize',13,'ValueChangedFcn',@(~,~)SigmaDisplay(),'ToolTip',STip);
             SizeType = uidropdown(SubtractOperationsPanel,'Position',ResolutionScaler([500 50 100 20]),'Items',{'Default','Scalar','Vector'},'FontSize',13,'ValueChangedFcn',@(~,~)SizeDisplay(),'ToolTip',KTip);
             FirstSigmaLabel = uilabel(SubtractOperationsPanel,'Position',ResolutionScaler([610 75 20 20]),'Text','σ:','FontSize',14,'VerticalAlignment','Center','FontWeight','Bold','ToolTip',STip);
-            FirstSigmaField = uieditfield(SubtractOperationsPanel,'Numeric','Position',ResolutionScaler([630 75 70 20]),'FontSize',13,'ValueChangedFcn',@(src,event)SubtractFieldCheck(src,event),'Value','0.5','ToolTip',STip);
+            FirstSigmaField = uieditfield(SubtractOperationsPanel,'Numeric','Position',ResolutionScaler([630 75 70 20]),'FontSize',13,'ValueChangedFcn',@(Source,Event)SubtractFieldCheck(Source,Event),'Value',0.5,'ToolTip',STip);
             SecondSigmaLabel = uilabel(SubtractOperationsPanel,'Position',ResolutionScaler([710 75 20 20]),'Text','Y:','FontSize',14,'VerticalAlignment','Center','FontWeight','Bold','Visible','off','ToolTip',STip);
-            SecondSigmaField = uieditfield(SubtractOperationsPanel,'Numeric','Position',ResolutionScaler([730 75 70 20]),'FontSize',13,'ValueChangedFcn',@(src,event)SubtractFieldCheck(src,event),'Value','0.5','Visible','off','ToolTip',STip);
+            SecondSigmaField = uieditfield(SubtractOperationsPanel,'Numeric','Position',ResolutionScaler([730 75 70 20]),'FontSize',13,'ValueChangedFcn',@(Source,Event)SubtractFieldCheck(Source,Event),'Value',0.5,'Visible','off','ToolTip',STip);
             ThirdSigmaLabel = uilabel(SubtractOperationsPanel,'Position',ResolutionScaler([810 75 20 20]),'Text','Z:','FontSize',14,'VerticalAlignment','Center','FontWeight','Bold','Visible','off','ToolTip',STip);
-            ThirdSigmaField = uieditfield(SubtractOperationsPanel,'Numeric','Position',ResolutionScaler([830 75 70 20]),'FontSize',13,'ValueChangedFcn',@(src,event)SubtractFieldCheck(src,event),'Value','0.5','Visible','off','ToolTip',STip);
+            ThirdSigmaField = uieditfield(SubtractOperationsPanel,'Numeric','Position',ResolutionScaler([830 75 70 20]),'FontSize',13,'ValueChangedFcn',@(Source,Event)SubtractFieldCheck(Source,Event),'Value',0.5,'Visible','off','ToolTip',STip);
             FirstSizeLabel = uilabel(SubtractOperationsPanel,'Position',ResolutionScaler([610 50 20 20]),'Text','N:','FontSize',14,'VerticalAlignment','Center','FontWeight','Bold','ToolTip',KTip);
-            FirstSizeField = uieditfield(SubtractOperationsPanel,'Numeric','Position',ResolutionScaler([630 50 70 20]),'FontSize',13,'ValueChangedFcn',@(src,event)SubtractFieldCheck(src,event),'Value','3','ToolTip',KTip);
+            FirstSizeField = uieditfield(SubtractOperationsPanel,'Numeric','Position',ResolutionScaler([630 50 70 20]),'FontSize',13,'ValueChangedFcn',@(Source,Event)SubtractFieldCheck(Source,Event),'Value',3,'ToolTip',KTip);
             SecondSizeLabel = uilabel(SubtractOperationsPanel,'Position',ResolutionScaler([710 50 20 20]),'Text','Y:','FontSize',14,'VerticalAlignment','Center','FontWeight','Bold','Visible','off','ToolTip',KTip);
-            SecondSizeField = uieditfield(SubtractOperationsPanel,'Numeric','Position',ResolutionScaler([730 50 70 20]),'FontSize',13,'ValueChangedFcn',@(src,event)SubtractFieldCheck(src,event),'Value','3','Visible','off','ToolTip',KTip);
+            SecondSizeField = uieditfield(SubtractOperationsPanel,'Numeric','Position',ResolutionScaler([730 50 70 20]),'FontSize',13,'ValueChangedFcn',@(Source,Event)SubtractFieldCheck(Source,Event),'Value',3,'Visible','off','ToolTip',KTip);
             ThirdSizeLabel = uilabel(SubtractOperationsPanel,'Position',ResolutionScaler([810 50 20 20]),'Text','Z:','FontSize',14,'VerticalAlignment','Center','FontWeight','Bold','Visible','off','ToolTip',KTip);
-            ThirdSizeField = uieditfield(SubtractOperationsPanel,'Numeric','Position',ResolutionScaler([830 50 70 20]),'FontSize',13,'ValueChangedFcn',@(src,event)SubtractFieldCheck(src,event),'Value','3','Visible','off','ToolTip',KTip);
+            ThirdSizeField = uieditfield(SubtractOperationsPanel,'Numeric','Position',ResolutionScaler([830 50 70 20]),'FontSize',13,'ValueChangedFcn',@(Source,Event)SubtractFieldCheck(Source,Event),'Value',3,'Visible','off','ToolTip',KTip);
             PreviewGaussian();
         end
         fontname(LoadFig,GetFont());
@@ -792,7 +792,7 @@ function HyperspectralUI(ScreenSize)
         uilabel(UnmixParametersPanel,'Position',[0 UnmixParametersPanel.Position(4) 0 0]+ResolutionScaler([5 -30 400 30]),'Text',sprintf('%s Parameters',UnmixingChoice.Value),'FontWeight','Bold','FontSize',20);
         uibutton(UnmixParametersPanel,'Position',([UnmixParametersPanel.Position(3) 0 0 0]+ResolutionScaler([-560 360 560 30]))./([2 1 1 1]),'Text',sprintf('Auto-Calibrate %s',UnmixingChoice.Value),'FontSize',15,'ButtonPushedFcn',@(~,~)AutoCalibrateLASSO);
         CoefficientsTable = uitable(UnmixParametersPanel,'Position',([UnmixParametersPanel.Position(3) 0 0 0]+ResolutionScaler([-560 125 560 230]))./([2 1 1 1]),'ColumnName',{'Reference Map','Lambda'}, ...
-            'ColumnEditable',[false true],'ColumnFormat',{'char','numeric'},'ColumnWidth',{'auto','auto'},'FontSize',16,'CellEditCallback',@(src,event)LambdaEdit(event));          
+            'ColumnEditable',[false true],'ColumnFormat',{'char','numeric'},'ColumnWidth',{'auto','auto'},'FontSize',16,'CellEditCallback',@(Source,Event)LambdaEdit(Event));          
         uilabel(UnmixParametersPanel,'Position',ResolutionScaler([10 100 180 20]),'Text','Advanced Parameters:','FontWeight','Bold','FontSize',15);         
         uilabel(UnmixParametersPanel,'Position',ResolutionScaler([10 75 120 20]),'Text','ADMM Parameter:','FontSize',13,'VerticalAlignment','Center');
         ADMMField = uieditfield(UnmixParametersPanel,'Numeric','Position',ResolutionScaler([135 75 130 20]),'Value',1,'FontSize',14,'HorizontalAlignment','Right','Placeholder','ADMM Parameter','ValueChangedFcn',@(Source,Event)UpdateAdvancedParam(Source,Event));
@@ -1703,8 +1703,8 @@ function OutputArray = TxtStackShapeUI(ScreenSize,InputArray,LoaderType)
     end
     uilabel(ReshapeFig,'Position',[(ReshapeFig.Position(3)-300)/2 270 300 30],'Text','Reshaping Imported Data','FontWeight','Bold','FontSize',17,'HorizontalAlignment','Center','VerticalAlignment','Bottom');
     MasterTable = uitable(ReshapeFig,'Position',[20 50 960 210],'Data',TableData,'ColumnName',{'File Name','Square?','Width','Height','Slices'},'ColumnEditable',[false true false true true], ...
-        'ColumnFormat',{'char','logical','numeric','numeric','numeric'},'ColumnWidth',{'auto','fit','fit','fit','fit'},'CellEditCallback',@(src,event)TableEdit(src,event));
-    AllButton = uibutton(ReshapeFig,'Position',[800 265 180 25],'Text','Apply to All Data','FontSize',13,'Enable','off','ButtonPushedFcn',@(src,event)ApplyToAll(src),'Tooltip','Apply previous column entry to all data sets.');
+        'ColumnFormat',{'char','logical','numeric','numeric','numeric'},'ColumnWidth',{'auto','fit','fit','fit','fit'},'CellEditCallback',@(Source,Event)TableEdit(Source,Event));
+    AllButton = uibutton(ReshapeFig,'Position',[800 265 180 25],'Text','Apply to All Data','FontSize',13,'Enable','off','ButtonPushedFcn',@(Source,Event)ApplyToAll(Source),'Tooltip','Apply previous column entry to all data sets.');
     ConfirmReshape = uibutton(ReshapeFig,'Position',[(ReshapeFig.Position(3)-180)/2 10 180 30],'Text','Confirm Data Shapes','FontSize',15,'ButtonPushedFcn',@(~,~)ConfirmTable);
     fontname(ReshapeFig,GetFont());
     uiwait(ReshapeFig);
@@ -2009,7 +2009,7 @@ function FitsArray = SpectralFind(SpecParams,ScreenSize)
     PeakNum = uidropdown(OperationsPanel,'Position',[260 510 60 20],'Items',arrayfun(@num2str,1:7,'UniformOutput',false),'Value','2','FontSize',15,'ValueChangedFcn',@(~,~)ChangePeakNum);
     uibutton(OperationsPanel,'Position',[(OperationsPanel.Position(3)-310)/2 470 310 30],'Text','Auto-Detect Peaks','FontSize',15,'ButtonPushedFcn',@(~,~)AutoDetect);
     PeaksTable = uitable(OperationsPanel,'Position',[(OperationsPanel.Position(3)-310)/2 50 310 405],'Data',PeaksData(:,2:3),'ColumnName',{'Frame Number','Wavenumber'},'ColumnEditable',[true true], ...
-        'ColumnFormat',{'numeric','numeric'},'ColumnWidth',{'auto','auto'},'CellEditCallback',@(src,event)PlotCharacteristicPeaks(event));
+        'ColumnFormat',{'numeric','numeric'},'ColumnWidth',{'auto','auto'},'CellEditCallback',@(Source,Event)PlotCharacteristicPeaks(Event));
     uibutton(OperationsPanel,'Position',[(OperationsPanel.Position(3)-310)/2 10 310 30],'Text','Confirm Characteristic Peaks','FontSize',16,'FontWeight','Bold','ButtonPushedFcn',@(~,~)ConfirmPeaks);
     PeakAxes = uiaxes(SpecPeakFig,'Position',[10 10 500 560],'XLim',[1 length(SpecParams{1})],'YLim',[-0.05 1.05]);
     PlotCharacteristicPeaks()
