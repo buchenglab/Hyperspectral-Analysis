@@ -750,7 +750,7 @@ function HyperspectralUI(ScreenSize)
         function EndSubtract()
         % Closes tab and restores processing abilities
             ToggleChildrenEnable(PrimaryPanel,ProcessingPanel,AdjustmentsPanel);
-            imagesc(ProcessedVisual,ProcessedArray{1,3}(:,:,1));
+            imagesc(ProcessedVisual,ExampleArray{5}(:,:,1));
             ToggleChildrenEnable(SubtractTab);
             LoadGroup.SelectedTab = HomeTab;
         end
@@ -767,7 +767,7 @@ function HyperspectralUI(ScreenSize)
             uialert(LoadFig,'There are no chemical references! Please load references before attempting unmixing.','No References','Icon','Error');
             ToggleChildrenEnable(PrimaryPanel,ReferencesPanel,ProcessingPanel,AdjustmentsPanel);
             return;
-        elseif size(PrimaryArray(:,2),3) ~= length(ReferenceArray{1,3})
+        elseif any(arrayfun(@(Rows)size(PrimaryArray{Rows,2},3),1:size(PrimaryArray,1)) ~= length(ReferenceArray{1,3}))
             uialert(LoadFig,sprintf(['There is a mismatch in some of your data. You have reference spectra that are %d in length, but the number of spectral bands in some of your input data does not match that.' ...
                 ' Check sizes and remove any incompatible files from the primary list.'],length(ReferenceArray{1,3})),'Dimension Mismatch','Icon','Error');
             ToggleChildrenEnable(PrimaryPanel,ReferencesPanel,ProcessingPanel,AdjustmentsPanel);
