@@ -1,8 +1,8 @@
 # Hyperspectral-Analysis
-**Version 0.95** *Updated February 2024*\
+**Version 0.98** *Updated April 2024*\
 *Developed by Mark Cherepashensky from the [Ji-Xin Cheng Group of Boston University](https://sites.bu.edu/cheng-group/)*
 ![Central Interface for Hyperspectral Analysis](https://i.imgur.com/rOLRrjE.png)
-Hyperspectral Analysis is a MATLAB-based analysis program designed to process hyperspectral image stacks. Using an intuitive UI with a robust and expanding feature set, the pipeline from raw to processed images is now easier to use and faster simultaneously. This open and easily modifiable script can be run with any type of hyperspectral data, though it was primarily developed with SRS and MIP acquired image stacks.
+Hyperspectral Analysis is a MATLAB-based analysis program designed to process hyperspectral image stacks. Using an intuitive UI with a robust and expanding feature set, the pipeline from raw to processed images is now easier to use and faster simultaneously. This can be run with any type of hyperspectral data, though it was primarily developed with SRS and MIP acquired image stacks.
 
 ## Key Features
  - Support for raw image stacks in both .txt and .tiff format, imported as whole folder data sets for bulk processing
@@ -14,19 +14,19 @@ Hyperspectral Analysis is a MATLAB-based analysis program designed to process hy
  - Dynamic UI to fit multiple screen resolutions and adapt to different operating systems (Windows, MacOS, and Linux)
 
 ## Updates
-### Changes from Version 0.9
-- A Contrast/Brightness adjustment UI that can handle multiple z-projections, adjustments to components of composite images, key frame selections per component, and previewing across different datasets
-- A fuller export UI where users can select from a variety of parameters
-- Several bug fixes with how LASSO progress and results were displayed
-- Robust handling of user errors to minimize crashes and unintended failures
-- Improved speed and efficiency, capable of handling more data sets
-- Export images as .tif files and stacks a .gif files
+### Changes from Version 0.95
+- Toolbox build for easier install and maintenance
+- Parameter list and additional export options
+- Added support for 3K displays with adjusted implementation of ResolutionScaler
+- Unmixing checkbox for LASSO to prevent unnecessary previews
+- Update to Path for better reliability and saving procedures
+- Error catching and crash failure in chemical reference imports
+- New prompts and checks for directorys, workspace variables, and overwrites
 *For a full list of improvements, see the changelog included in the repository*
+
 ### Features for Version 1.0
- - A new interface for BM#D is in development to support importing as a package rather than including
- - Tooltips for all features to explain the processes in greater detail and understand what each parameter means
- - Quality of life features like quick LASSO parameter input, reference color exceptions, and a parameter list for export
- - Save states to return to interrupted workflows
+ - A new interface for BM#D is in development and will be available soon
+ - Windowed Z-Projections
 
 ### Future Features
  While potentially not pending for the next update, these are eventual features that will soon be implemented and available for public use
