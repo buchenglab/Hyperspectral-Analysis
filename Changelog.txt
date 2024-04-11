@@ -1,3 +1,24 @@
+Version 0.98 (April 2024)
+-Repackaged as a MATLAB toolbox for better release and feature management
+-Added a try/catch to peak detection selection when using chemical references for cases when users quit
+-Added ResolutionScaler for use in FontSize statements to adjustment for additional display resolutions more cleanly
+-Added a new xlim statement for GraphSpectra to create appropriate x-axis padding for spectra plotted
+-Updated certain font sizes to scale more cleanly with ResolutionScaler and minimize incompatibility on 3K and 4K displays
+-Adjusted the capture statements for continued figure use after export such that home tab and adjustments both remain operational and can proceed to additional processing/exports while additional adjust tabs will be caught and disabled to prevent confusion
+-Added a stop unmixing checkbox to LASSO to prevent unnecessary previews and adjusted logic around UpdateAdvancedParam to accomodate
+-Graphing key frames xlines now provides a label in case WaveCalibrate organization limits display of frame correctly against plot
+-Changed the export message to accurately reflect the current image set and data file of focus being exported with an update value progress bar
+-Removed remnant code for PreviewExport as more precise and less intensive preview is available in the AdjustTab, making it redundant
+-Added non-contrast/brightness adjusted versions to export (composite images now save as a non-CB version, a version that uses the components with adjusted CB but not CB-adjusted itself, and a full CB version using adjusted CB from the components)
+-Added export of spectra used if calibration exists with saved states of individual spectra, overlayed spectra, and stacked spectra
+-Added support for color re-roll on creating new references to avoid heavy overlaps
+-Changed overwrite for repeated unmixing to ensure only latest results are used, and set confirmation pop-up for deleting references after conducting unmixing
+-LaunchRemoval changed to LaunchSubtract to avoid conflict with future function call for upcoming features
+-Updated how Path works to accommodate selecting the folder repeatedly when importing data and references
+-Added a directory prompt when exporting to set correct directory relative to the current operating path from imports
+-Changed exporting dialogues and titling to better read which file and dataset is currently under export
+-Check for workspace variables and existing figures before launch to ensure minimal MATLAB workspace
+
 Version 0.95 (February 2024)
 -Fixed a bug where LASSO progress would extend past the number of data sets if any number of data sets were deleted
 -Fixed a bug where after unmixing visual previews of data sets from the Home tab used ExampleArray rather than the appropriate row of ProcessedArray
