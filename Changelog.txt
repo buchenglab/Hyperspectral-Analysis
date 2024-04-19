@@ -1,3 +1,7 @@
+Version 1.15 (April 2024)
+-Added customization for spectral fitting calibration
+-Changed operating order of some spectral graphing to run faster
+
 Version 1.1 (April 2024)
 -Added faster processing for BM4D datasets
 -Added median filtering as another background removal tool
