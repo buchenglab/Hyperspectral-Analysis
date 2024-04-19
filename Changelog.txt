@@ -1,3 +1,17 @@
+Version 1.1 (April 2024)
+-Added faster processing for BM4D datasets
+-Added median filtering as another background removal tool
+-Fixed a bug where loading bars would not properly handle variable exports, now indeterminate to simplify procedures
+-Fixed a visual glitch that can occur when using uigetdir() in MATLAB
+-Adjustments to GitHub repository to better integrate with MATLAB File Exchange
+
+Version 1.0 (April 2024)
+-Built in BM4D support for all standard profiles, linking the Tampere University distribution
+-Created customed handling of BM4D to better integrate with core code
+-Fixed a bug where initialization would detect variables even if the workspace was clean before prompting warnings
+-Simplified binary subtraction to improve performance
+-Renamed software to DECPIHER
+
 Version 0.98 (April 2024)
 -Repackaged as a MATLAB toolbox for better release and feature management
 -Added a try/catch to peak detection selection when using chemical references for cases when users quit
