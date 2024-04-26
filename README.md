@@ -18,9 +18,10 @@ DECIPHER (Denosing Elements, Clearing Interference, and Processing Hyperspectral
 
 ## Updates
 ### Version 1.15
--Better support for BM4D processing
--Median filters (both 2D and 3D) are now available as background removal options
--Expanded customization for spectral fitting background
+- Better support for BM4D processing
+- Median filters (both 2D and 3D) are now available as background removal options
+- Expanded customization for spectral fitting background
+
 *For a full list of improvements, see the changelog included in the repository*
 
 ### Future Features
