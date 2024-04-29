@@ -7,10 +7,12 @@ DECIPHER (Denosing Elements, Clearing Interference, and Processing Hyperspectral
 *Demo data is available on [Google Drive](https://drive.google.com/drive/folders/1MvYJIIbNUKU04xALBnq612Ed2gQi-KZt?usp=sharing).*
 
 ## Key Features
+![Workflow Overview](https://i.imgur.com/B5brRvC.png)
  - Support for raw image stacks in both .txt and .tiff format, imported as whole folder data sets for bulk processing
  - Hooks to process data with BM4D, both standard profiles and custom ones
  - Background removal with binary mask subtraction, Gaussian blurring, and median filtering
  - Pure chemical reference management with spectral fitting, color selection, and multi-ROI selection
+ - Spectral chemical reference management with polynomial shifting for wavelengths
  - Generate chemical composition unmixing maps using non-negative lasso, optimized for multiple lambda values and quick runtime using parallel processing
  - Full contrast/brightness adjustment with key-frames selection, multi-color composite image generation, and additional z-projection generation with simultaneous adjustments for all data
  - Previewing on all operations and intuitive adjustments for any parameter
