@@ -1,3 +1,13 @@
+Version 1.20 (April 2024)
+-Fixed a bug where spectra would not correctly export and only appeared as white rectangles on certain operating systems
+-Added a reverse option to stacked and overlayed spectra for more presentation-friendly figures
+-Rebuilt FormatUI to support differentiating pure images and existing spectra
+-Added support for spectral imports for existing spectra as single column *.txt files and variables from *.mat
+-Built a *.mat parser interface to find vector spectra or select multiple spectra from a matrix
+-Added spectral management for existing reference spectra in ChemicalRefParameters, with an option to extend new functions into BrowserPanel
+-Fixed an issue where some background removal ranges would have non-normalized values
+-Uploaded a workflow diagram for new users
+
 Version 1.15 (April 2024)
 -Added customization for spectral fitting calibration
 -Changed operating order of some spectral graphing to run faster
