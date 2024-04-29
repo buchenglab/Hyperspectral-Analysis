@@ -1,5 +1,5 @@
 # DECIPHER
-**Version 1.15** *Updated April 2024*\
+**Version 1.20** *Updated April 2024*\
 *Developed by Mark Cherepashensky from the [Ji-Xin Cheng Group of Boston University](https://sites.bu.edu/cheng-group/)*
 ![Central Interface for DECIPHER](https://i.imgur.com/XuZUKJa.png)
 DECIPHER (Denosing Elements, Clearing Interference, and Processing Hyperspectral Endmembers for Research) is a MATLAB-based analysis program designed to process hyperspectral image stacks. Using an intuitive UI with a robust and expanding feature set, the pipeline from raw to processed images is now easier to use and faster simultaneously. This can be run with any type of hyperspectral data, though it was primarily developed with SRS acquired image stacks.
@@ -19,10 +19,10 @@ DECIPHER (Denosing Elements, Clearing Interference, and Processing Hyperspectral
  - Dynamic UI to fit multiple screen resolutions and adapt to different operating systems (Windows, MacOS, and Linux)
 
 ## Updates
-### Version 1.15
-- Better support for BM4D processing
-- Median filters (both 2D and 3D) are now available as background removal options
-- Expanded customization for spectral fitting background
+### Version 1.20
+- Support for existing reference spectra in *.txt or *.mat files
+- Improvements to importing data and data management for primary and reference data
+- Bug fixes for background removal range display and spectra exports for visualization
 
 *For a full list of improvements, see the changelog included in the repository*
 
