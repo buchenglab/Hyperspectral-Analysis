@@ -1,4 +1,4 @@
-Version 1.20 (April 2024)
+Version 1.21 (April 2024)
 -Fixed a bug where spectra would not correctly export and only appeared as white rectangles on certain operating systems
 -Added a reverse option to stacked and overlayed spectra for more presentation-friendly figures
 -Rebuilt FormatUI to support differentiating pure images and existing spectra
@@ -7,6 +7,8 @@ Version 1.20 (April 2024)
 -Added spectral management for existing reference spectra in ChemicalRefParameters, with an option to extend new functions into BrowserPanel
 -Fixed an issue where some background removal ranges would have non-normalized values
 -Uploaded a workflow diagram for new users
+-Bug fix for Windows BM4D users with older versions that used lower-case files (bm4d.m vs BM4D.m)
+-Adjusted FormatUI errors for importing and quiting
 
 Version 1.15 (April 2024)
 -Added customization for spectral fitting calibration
